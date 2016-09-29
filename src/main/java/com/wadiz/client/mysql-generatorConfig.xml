@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+<!-- mysql setting  -->
+<classPathEntry location="C:\Users\hyunlae\.m2\repository\mysql\mysql-connector-java\5.1.36\mysql-connector-java-5.1.36.jar" />
+
+
+	<context id="context1" >
+  	<!-- mysql
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/interface" userId="hooh" password="!hooh00" />
+    <javaModelGenerator targetPackage="com.hooh.itf.model" targetProject="batch.interface" />
+    <sqlMapGenerator targetPackage="com.hooh.itf.persistence.mapper.mysql" targetProject="batch.interface" />
+    <javaClientGenerator targetPackage="com.hooh.itf.persistence.mysql" targetProject="batch.interface" type="XMLMAPPER" />
+ 	-->
+
+	<!-- oracle -->
+    <!-- <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:XE" userId="hooh" password="!hooh00" /> -->
+    <!-- 
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/kds_client" userId="wadiz" password="W@diz2016" />
+    <javaModelGenerator targetPackage="com.wadiz.client.kds.model" targetProject="com.wadiz.client.kds" />
+    <sqlMapGenerator targetPackage="com.wadiz.client.kds.mapper" targetProject="com.wadiz.client.kds" />
+    <javaClientGenerator targetPackage="com.wadiz.client.kds.persistence" targetProject="com.wadiz.client.kds" type="XMLMAPPER" />
+    -->
+   <!-- 
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://wadiz.iptime.org:3306/wadiz_db" userId="wadiz" password="W@diz2015#1" />
+    <javaModelGenerator  targetPackage="com.wadiz.client.kds.model" targetProject="com.wadiz.client" />
+    <sqlMapGenerator     targetPackage="com.wadiz.client.kds.persistence.mapper" targetProject="com.wadiz.client" />
+    <javaClientGenerator targetPackage="com.wadiz.client.kds.persistence" targetProject="com.wadiz.client" type="XMLMAPPER" />
+     -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://wadiz.iptime.org:3306/wadiz_db" userId="wadiz" password="W@diz2015#1" />
+    <javaModelGenerator  targetPackage="com.wadiz.core.wexception.model" targetProject="com.wadiz.web" />
+    <sqlMapGenerator     targetPackage="com.wadiz.core.wexception.dao.mapper" targetProject="com.wadiz.web" />
+    <javaClientGenerator targetPackage="com.wadiz.core.wexception.dao.persistence" targetProject="com.wadiz.web" type="XMLMAPPER" />
+   
+   
+   	<table  tableName="WadizException" domainObjectName="WadizException"> 														                    
+ 	  <columnOverride column="ExceptionNo" property="exceptionNo" />
+      <columnOverride column="Target" property="target" />
+      <columnOverride column="Contents" property="contents" />
+      <columnOverride column="Params" property="params" />
+      <columnOverride column="IsVerified" property="isVerified" />
+      <columnOverride column="RegTime" property="regTime" />
+	</table> 
+	
+   <!-- 
+	TbBoardMaster : 게시판 정보
+	TbBoardArticle : 게시판 글
+	TbBoardArticleHis : 게시판 글 내역
+	TbBoardArticleAttachMapping : 게시판 첨부파일
+	TbBoardArticleComment : 게시판 댓글
+	TbBoardArticleCommentHis : 게시판 댓글 내역
+	TbBoardArticleViewUser : 게시글 조회 사용자 
+	-->
+	
+	<!-- 
+	<table  tableName="TbBoardArticle" domainObjectName="FTBoardArticle" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="ArticleSeq" property="articleSeq" />
+      <columnOverride column="BoardId" property="boardId" />
+      <columnOverride column="BoardCtgr" property="boardCtgr" />
+      <columnOverride column="NoticeYn" property="noticeYn" />
+      <columnOverride column="BestYn" property="bestYn" />
+      <columnOverride column="Title" property="title" />
+      <columnOverride column="Contents" property="contents" />
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="DelYn" property="delYn" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      <columnOverride column="DelDate" property="delDate" />
+      <columnOverride column="ViewNo" property="viewNo" />
+      
+	</table>
+	
+	   
+		<table  tableName="TbBoardArticleViewUser" domainObjectName="FTBoardArticleViewUser" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+	
+   																		 
+      <columnOverride column="ArticleSeq" property="articleSeq" />
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      
+	</table>
+	
+	<table  tableName="TbBoardArticle" domainObjectName="FTBoardArticle" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="ArticleSeq" property="articleSeq" />
+      <columnOverride column="BoardId" property="boardId" />
+      <columnOverride column="BoardCtgr" property="boardCtgr" />
+      <columnOverride column="NoticeYn" property="noticeYn" />
+      <columnOverride column="BestYn" property="bestYn" />
+      <columnOverride column="Title" property="title" />
+      <columnOverride column="Contents" property="contents" />
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="DelYn" property="delYn" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      <columnOverride column="DelDate" property="delDate" />
+      
+	</table>
+	
+	<table  tableName="TbBoardMaster" domainObjectName="FTBoardMaster" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+	
+   																		 
+      <columnOverride column="BoardId" property="boardId" />
+      <columnOverride column="NoticeUseYn" property="noticeUseYn" />
+      <columnOverride column="BestUseYn" property="bestUseYn" />
+      <columnOverride column="BoardName" property="boardName" />
+      <columnOverride column="BoardDesc" property="boardDesc" />
+      <columnOverride column="BoardDeco1" property="boardDeco1" />
+      <columnOverride column="BoardDeco2" property="boardDeco2" />
+      <columnOverride column="BoardDeco3" property="boardDeco3" />
+      <columnOverride column="DelYn" property="delYn" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      <columnOverride column="DelDate" property="delDate" />
+      
+	</table>
+	
+	<table  tableName="TbBoardArticleComment" domainObjectName="FTBoardArticleComment" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+	
+   																		 
+      <columnOverride column="CommentNo" property="commentNo" />
+      <columnOverride column="ArticleSeq" property="articleSeq" />
+      <columnOverride column="BoardId" property="boardId" />
+      <columnOverride column="Thread" property="thread" />
+      <columnOverride column="Dep" property="dep" />
+      <columnOverride column="Contents" property="contents" />
+      <columnOverride column="DelYn" property="DelYn" />
+      <columnOverride column="UserId" property="UserId" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      <columnOverride column="DelDate" property="delDate" />
+      
+	</table>	
+	
+	
+
+    <table  tableName="TbInvestKsdAccountCheck" domainObjectName="TbInvestKsdAccountCheck" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="InvestId" property="investId" />
+      <columnOverride column="AskProcDt" property="askProcDt" />
+      <columnOverride column="KsdReqSeq" property="ksdReqSeq" />
+      <columnOverride column="Stat" property="stat" />
+      <columnOverride column="ResultCode" property="resultCode" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="ReqDate" property="reqDate" />
+      <columnOverride column="ResDate" property="resDate" />
+      
+	</table>
+	
+	<table  tableName="TbInvestKsdAccountCheckHis" domainObjectName="TbInvestKsdAccountCheckHis" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="HisNo" property="hisNo" />
+      <columnOverride column="InvestId" property="investId" />
+      <columnOverride column="AskProcDt" property="askProcDt" />
+      <columnOverride column="KsdReqSeq" property="ksdReqSeq" />
+      <columnOverride column="Stat" property="stat" />
+      <columnOverride column="ResultCode" property="resultCode" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="ReqDate" property="reqDate" />
+      <columnOverride column="ResDate" property="resDate" />
+      
+	</table>
+   
+     
+	
+	
+	
+    <table  tableName="ClientRequest" domainObjectName="ClientRequest" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="request_seq" property="requestSeq" />
+      <columnOverride column="request_uuid" property="requestUuid" />
+      <columnOverride column="request_uuid" property="requestUuid" />
+      <columnOverride column="type" property="type" />
+      <columnOverride column="ref_id" property="refId" />
+      <columnOverride column="content" property="content" />
+      <columnOverride column="reg_time" property="regTime" />
+      
+	</table>
+   
+   <table  tableName="TbBusinessLicenseInfo" domainObjectName="TbBusinessLicenseInfo" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="BusinessLicenseId" property="businessLicenseId" />
+      <columnOverride column="BusinessRegNumber" property="businessRegNumber" />
+      <columnOverride column="CorpRegNum" property="corpRegNum" />
+      <columnOverride column="RegUserId" property="regUserId" />
+      
+	</table>
+	
+   <table  tableName="ClientResponse" domainObjectName="ClientResponse" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="response_seq" property="responseSeq" />
+      <columnOverride column="response_uuid" property="responseUuid" />
+      <columnOverride column="request_uuid" property="requestUuid" />
+      <columnOverride column="content" property="content" />
+      <columnOverride column="reg_time" property="regTime" />
+      <columnOverride column="repl_seq" property="replSeq" />
+      
+	</table>
+   
+    <table  tableName="TbPersonalUserInfo" domainObjectName="TbPersonalUserInfo" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="SSN1" property="ssn1" />
+      <columnOverride column="SSN2" property="ssn2" />
+      <columnOverride column="Location1" property="location1" />
+      <columnOverride column="Location2" property="location2" />
+      <columnOverride column="JobCode1" property="jobCode1" />
+      <columnOverride column="JobCode2" property="jobCode2" />
+      <columnOverride column="JobCode3" property="jobCode3" />
+      <columnOverride column="ScrtCpCode" property="scrtCpCode" />
+      <columnOverride column="ScrtAccountNo" property="scrtAccountNo" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      <columnOverride column="Birth" property="Birth" />
+      <columnOverride column="Sex" property="sex" />
+      
+	</table>
+	
+	<table  tableName="TbUserAccntAuth" domainObjectName="TbUserAccntAuth" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="AuthType" property="authType" />
+      <columnOverride column="Status" property="status" />
+      <columnOverride column="ManagementId" property="managementId" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="AuthDate" property="authDate" />
+      
+	</table>
+	
+	<table  tableName="TbUserAccntAuthHis" domainObjectName="TbUserAccntAuthHis" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   	
+   	  <columnOverride column="HisNo" property="hisNo" />																	 
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="AuthType" property="authType" />
+      <columnOverride column="Status" property="status" />
+      <columnOverride column="ManagementId" property="managementId" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="AuthDate" property="authDate" />
+      
+	</table>
+   
+   
+   <table  tableName="TbIbkInvestRefundIfInfo" domainObjectName="TbIbkInvestRefundIfInfo" 
+   																			 enableSelectByPrimaryKey="true"
+   																			 enableUpdateByPrimaryKey="true"
+   																			 enableSelectByExample="false" 
+	   																		 enableDeleteByExample="false" 
+	   																		 enableCountByExample="false" 
+	   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="InvestId" property="investId" />
+      <columnOverride column="Stat" property="stat" />
+      <columnOverride column="RefundCode" property="refundCode" />
+      <columnOverride column="ResnCode" property="resnCode" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="ReqDate" property="reqDate" />
+      <columnOverride column="ResDate" property="resDate" />
+      
+	</table>
+   
+      <table  tableName="TbCampaignIbkInfo" domainObjectName="TbCampaignIbkInfo" enableSelectByExample="false" 
+	   																		 enableDeleteByExample="false" 
+	   																		 enableCountByExample="false" 
+	   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="CampaignId" property="campaignId" />
+      <columnOverride column="ValidYn" property="validYn" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      
+	</table>
+	
+	 <table  tableName="TbIbkOfferIfInfo" domainObjectName="TbIbkOfferIfInfo" enableSelectByExample="false" 
+	   																		 enableDeleteByExample="false" 
+	   																		 enableCountByExample="false" 
+	   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="IfId" property="ifId" />
+      <columnOverride column="IfCode" property="ifCode" />
+      <columnOverride column="DataType" property="dataType" />
+      <columnOverride column="Seq" property="seq" />
+      <columnOverride column="BankCode" property="bankCode" />
+      <columnOverride column="TranCompId" property="tranCompId" />
+      <columnOverride column="CampaignId" property="campaignId" />
+      <columnOverride column="OfferName" property="offerName" />
+      <columnOverride column="IssuCorpName" property="issuCorpName" />
+      <columnOverride column="BusinessRegNumber" property="businessRegNumber" />
+      <columnOverride column="SecurtType" property="securtType" />
+      <columnOverride column="TargetAmount" property="targetAmount" />
+      <columnOverride column="PeriodStartDate" property="periodStartDate" />
+      <columnOverride column="PeriodFinishDate" property="periodFinishDate" />
+      <columnOverride column="RefundDate" property="refundDate" />
+      <columnOverride column="PaymentDate" property="paymentDate" />
+      <columnOverride column="ReceiptAccountNo" property="receiptAccountNo" />
+      <columnOverride column="ReceiptDepositor" property="receiptDepositor" />
+      <columnOverride column="ProcType" property="procType" />
+      <columnOverride column="ProcStatus" property="procStatus" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="ReqDate" property="reqDate" />
+      <columnOverride column="ResDate" property="resDate" />
+      
+	</table>
+	
+	<table  tableName="TbIbkInvestIfInfo" domainObjectName="TbIbkInvestIfInfo" enableSelectByExample="false" 
+	   																		 enableDeleteByExample="false" 
+	   																		 enableCountByExample="false" 
+	   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="IfId" property="ifId" />
+      <columnOverride column="IfCode" property="ifCode" />
+      <columnOverride column="DataType" property="dataType" />
+      <columnOverride column="Seq" property="seq" />
+      <columnOverride column="PayType" property="payType" />
+      <columnOverride column="CampaignId" property="campaignId" />
+      <columnOverride column="OfferName" property="offerName" />
+      <columnOverride column="InvestId" property="investId" />
+      <columnOverride column="InvestAmount" property="investAmount" />
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="PaymentsOfStocksYn" property="paymentsOfStocksYn" />
+      <columnOverride column="PayReqDate" property="payReqDate" />
+      <columnOverride column="PayReqTime" property="payReqTime" />
+      <columnOverride column="ProcStatus" property="procStatus" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="ReqDate" property="reqDate" />
+      <columnOverride column="ResDate" property="resDate" />
+      
+	</table>
+	
+   
+    <table  tableName="TbIbkOfferIfInfo" domainObjectName="IbkOfferIfInfo" enableSelectByExample="false" 
+	   																		 enableDeleteByExample="false" 
+	   																		 enableCountByExample="false" 
+	   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="IfId" property="IfId" />
+      <columnOverride column="IfCode" property="IfCode" />
+      <columnOverride column="DataType" property="DataType" />
+      <columnOverride column="Seq" property="Seq" />
+      <columnOverride column="BankCode" property="BankCode" />
+      <columnOverride column="TranCompId" property="TranCompId" />
+      <columnOverride column="CampaignId" property="CampaignId" />
+      <columnOverride column="OfferName" property="OfferName" />
+      <columnOverride column="IssuCorpName" property="IssuCorpName" />
+      <columnOverride column="BusinessRegNumber" property="BusinessRegNumber" />
+      <columnOverride column="SecurtType" property="SecurtType" />
+      <columnOverride column="TargetAmount" property="TargetAmount" />
+      <columnOverride column="PeriodStartDate" property="PeriodStartDate" />
+      <columnOverride column="PeriodFinishDate" property="PeriodFinishDate" />
+      <columnOverride column="RefundDate" property="RefundDate" />
+      <columnOverride column="PaymentDate" property="PaymentDate" />
+      <columnOverride column="ReceiptAccountNo" property="ReceiptAccountNo" />
+      <columnOverride column="ReceiptDepositor" property="ReceiptDepositor" />
+      <columnOverride column="ProcType" property="ProcType" />
+      <columnOverride column="ProcStatus" property="ProcStatus" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="ReqDate" property="ReqDate" />
+      <columnOverride column="ResDate" property="ResDate" />
+      
+	</table>
+	
+	<table  tableName="TbIbkInvestIfInfo" domainObjectName="IbkInvestIfInfo" enableSelectByExample="false" 
+	   																		 enableDeleteByExample="false" 
+	   																		 enableCountByExample="false" 
+	   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="IfId" property="IfId" />
+      <columnOverride column="IfCode" property="IfCode" />
+      <columnOverride column="DataType" property="DataType" />
+      <columnOverride column="Seq" property="Seq" />
+      <columnOverride column="PayType" property="payType" />
+      <columnOverride column="CampaignId" property="CampaignId" />
+      <columnOverride column="OfferName" property="offerName" />
+      <columnOverride column="InvestId" property="investId" />
+      <columnOverride column="InvestAmount" property="investAmount" />
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="PaymentsOfStocksYn" property="PaymentsOfStocksYn" />
+      <columnOverride column="PayReqDate" property="PayReqDate" />
+      <columnOverride column="PayReqTime" property="PayReqTime" />
+      <columnOverride column="ProcStatus" property="ProcStatus" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="ReqDate" property="ReqDate" />
+      <columnOverride column="ResDate" property="ResDate" />
+      
+	</table>
+   
+   <table  tableName="TbBusinessLicenseInfo" domainObjectName="FTBusinessLicenseInfo" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="BusinessLicenseId" property="businessLicenseId" />
+      <columnOverride column="CorpType" property="corpType" />
+      <columnOverride column="BusinessRegNumber" property="businessRegNumber" />
+      <columnOverride column="CorpName" property="corpName" />
+      <columnOverride column="RepresentName" property="representName" />
+      <columnOverride column="BusinessOpenDate" property="businessOpenDate" />
+      <columnOverride column="BsnsType" property="bsnsType" />
+      <columnOverride column="CorpRegNum" property="corpRegNum" />
+      <columnOverride column="BusinessLicensePhotoId" property="businessLicensePhotoId" />
+      <columnOverride column="HeadOfficePostCode" property="headOfficePostCode" />
+      <columnOverride column="HeadOfficeLocation1" property="headOfficeLocation1" />
+      <columnOverride column="HeadOfficeLocation2" property="headOfficeLocation2" />
+      <columnOverride column="Workforce" property="workforce" />
+      <columnOverride column="Email" property="email" />
+      <columnOverride column="HomePageOrBlog" property="homePageOrBlog" />
+      <columnOverride column="FacebookUri" property="facebookUri" />
+      <columnOverride column="TwitterUrl" property="twitterUrl" />
+      <columnOverride column="LogoPhotoId" property="logoPhotoId" />
+      <columnOverride column="AtcIncorpPhotoId" property="atcIncorpPhotoId" />
+      <columnOverride column="CertifiedPhotoId" property="certifiedPhotoId" />
+      <columnOverride column="RegUserId" property="regUserId" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateUserId" property="updateUserId" />
+      <columnOverride column="RegUserId" property="regUserId" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      
+      
+	</table>
+   
+   <table  tableName="TbPersonalUserInfo" domainObjectName="PersonalUserInfo" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="SSN1" property="ssn1" />
+      <columnOverride column="SSN2" property="ssn2" />
+      <columnOverride column="Location1" property="location1" />
+      <columnOverride column="Location2" property="location2" />
+      <columnOverride column="JobCode1" property="jobCode1" />
+      <columnOverride column="JobCode2" property="jobCode2" />
+      <columnOverride column="JobCode3" property="jobCode3" />
+      <columnOverride column="ScrtCpCode" property="scrtCpCode" />
+      <columnOverride column="RegDate" property="regDate" />
+      <columnOverride column="UpdateDate" property="updateDate" />
+      
+	</table>
+   
+    
+   <table  tableName="TbUserEmailConfirm" domainObjectName="UserEmailConfirm" enableSelectByExample="false" 
+   																		 enableDeleteByExample="false" 
+   																		 enableCountByExample="false" 
+   																		 enableUpdateByExample="false">
+   																		 
+ 	  <columnOverride column="EmailConfirmId" property="emailConfirmId" />
+      <columnOverride column="UserId" property="userId" />
+      <columnOverride column="AuthKey" property="authKey" />
+      <columnOverride column="IsAuth" property="isAuth" />
+      <columnOverride column="ConfirmDate" property="confirmDate" />
+      <columnOverride column="RegDate" property="regDate" />
+      
+	</table>
+	
+   <table  tableName="request" domainObjectName="KdsRequest">
+ 	  <columnOverride column="request_seq" property="requestSeq" />
+      <columnOverride column="request_uuid" property="requestUuid" />
+      <columnOverride column="content" property="content" />
+      <columnOverride column="reg_time" property="regTime" />
+	</table>
+	<table  tableName="response" domainObjectName="KdsResponse">
+ 	  <columnOverride column="response_seq" property="responseSeq" />
+      <columnOverride column="response_uuid" property="responseUuid" />
+      <columnOverride column="request_uuid" property="requestUuid" />
+      <columnOverride column="content" property="content" />
+      <columnOverride column="reg_time" property="regTime" />
+	</table>
+	 -->
+    
+	
+  </context>
+</generatorConfiguration>
